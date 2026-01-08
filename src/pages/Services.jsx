@@ -4,30 +4,30 @@ import { Home, Building2, HardHat, PenTool, CheckCircle2, ChevronRight, Zap, Shi
 import { Link } from 'react-router-dom';
 
 const services = [
-  { 
-    title: "Residential Development", 
-    icon: <Home size={32} />, 
+  {
+    title: "Residential Development",
+    icon: <Home size={32} />,
     desc: "Crafting bespoke luxury villas and high-end apartments engineered for the modern family.",
     features: ["Vastu Compliant", "Sustainable Materials", "Structural Warranty"],
     color: "border-[#f59e0b]"
   },
-  { 
-    title: "Commercial Infrastructure", 
-    icon: <Building2 size={32} />, 
+  {
+    title: "Commercial Infrastructure",
+    icon: <Building2 size={32} />,
     desc: "Developing iconic office hubs and retail complexes that drive business growth and ROI.",
     features: ["Steel-Frame Structures", "Modern Facades", "Optimized Layouts"],
     color: "border-[#0f172a]"
   },
-  { 
-    title: "Civil Engineering", 
-    icon: <HardHat size={32} />, 
+  {
+    title: "Civil Engineering",
+    icon: <HardHat size={32} />,
     desc: "Large-scale infrastructure including roads, industrial parks, and complex structural planning.",
     features: ["Heavy Equipment Fleet", "Precision Engineering", "Government Grade"],
     color: "border-[#f59e0b]"
   },
-  { 
-    title: "Premium Interior Design", 
-    icon: <PenTool size={32} />, 
+  {
+    title: "Premium Interior Design",
+    icon: <PenTool size={32} />,
     desc: "Merging aesthetics with functionality to create world-class interiors and smart spaces.",
     features: ["Luxury Finishing", "Space Optimization", "3D Visualization"],
     color: "border-[#0f172a]"
@@ -58,7 +58,7 @@ const Services = () => {
 
   return (
     <div className="pt-24 bg-[#fcfcfc] overflow-hidden">
-      
+
       {/* 1. Header Section - Dynamic Entrance */}
       <section className="bg-[#0f172a] py-32 text-white relative">
         <div className="absolute inset-0 opacity-10 pointer-events-none" style={{ backgroundImage: `url('https://www.transparenttextures.com/patterns/graphy.png')` }} />
@@ -70,21 +70,30 @@ const Services = () => {
           >
             Elite Solutions
           </motion.div>
-          <motion.h1 
+          <motion.h1
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8 }}
-            className="text-6xl md:text-8xl font-black mb-8 uppercase tracking-tighter leading-none"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black mb-6 md:mb-8 uppercase tracking-tighter leading-[1.1] md:leading-none"
           >
-            Our <span className="text-transparent" style={{ WebkitTextStroke: '2px #f59e0b' }}>Capabilities.</span>
+            Our <br className="block md:hidden" />
+            <span
+              className="text-transparent"
+              style={{
+                WebkitTextStroke: '1px #f59e0b', // Mobile par patli stroke
+                // Large screens par 2px stroke ke liye media query inline style mein (optional)
+              }}
+            >
+              Capabilities
+            </span>
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
             className="text-slate-400 max-w-2xl mx-auto text-xl font-medium leading-relaxed"
           >
-            Verma Prime Properties provides world-class structural engineering and architectural 
+            Verma Prime Properties provides world-class structural engineering and architectural
             excellence tailored to Indore's growing landscape.
           </motion.p>
         </div>
@@ -92,7 +101,7 @@ const Services = () => {
 
       {/* 2. Services Grid - 3D Hover & Staggered Reveal */}
       <section className="py-32 max-w-7xl mx-auto px-6">
-        <motion.div 
+        <motion.div
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -100,7 +109,7 @@ const Services = () => {
           className="grid md:grid-cols-2 lg:grid-cols-4 gap-0 border-4 border-[#0f172a]"
         >
           {services.map((s, index) => (
-            <motion.div 
+            <motion.div
               key={index}
               variants={itemVariants}
               whileHover={{ backgroundColor: "#0f172a", color: "#ffffff" }}
@@ -119,7 +128,7 @@ const Services = () => {
                 <p className="text-slate-500 group-hover:text-slate-300 mb-8 text-sm font-semibold leading-relaxed transition-colors">
                   {s.desc}
                 </p>
-                
+
                 <ul className="space-y-4 mb-10">
                   {s.features.map((feature, i) => (
                     <li key={i} className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-slate-400 group-hover:text-white transition-colors">
@@ -129,7 +138,7 @@ const Services = () => {
                 </ul>
               </div>
 
-              <motion.button 
+              <motion.button
                 whileTap={{ scale: 0.9 }}
                 className="flex items-center gap-2 font-black text-[10px] uppercase tracking-[0.2em] text-[#f59e0b] group-hover:text-white transition-all"
               >
@@ -143,7 +152,7 @@ const Services = () => {
       {/* 3. The Execution Process - Parallax Motion */}
       <section className="py-32 bg-[#0f172a] relative overflow-hidden">
         {/* Animated Background Element */}
-        <motion.div 
+        <motion.div
           animate={{ x: [-100, 100], opacity: [0.03, 0.05] }}
           transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
           className="absolute top-1/2 left-0 text-[20rem] font-black text-white pointer-events-none select-none -translate-y-1/2"
@@ -152,20 +161,20 @@ const Services = () => {
         </motion.div>
 
         <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             className="text-5xl md:text-7xl font-black mb-24 text-white uppercase tracking-tighter"
           >
             HOW WE <span className="text-[#f59e0b]">EXECUTE</span>
           </motion.h2>
-          
+
           <div className="grid md:grid-cols-4 gap-12 relative">
             {/* Connection Line Desktop */}
             <div className="hidden lg:block absolute top-[30%] left-0 w-full h-[2px] bg-white/10 z-0" />
 
             {processSteps.map((item, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -187,8 +196,8 @@ const Services = () => {
 
       {/* 4. Strategic Call to Action */}
       <section className="py-40 text-center bg-white relative">
-        <motion.div 
-          initial={{ opacity: 0, y: 50 }} 
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           className="max-w-4xl mx-auto px-6"
         >
@@ -201,7 +210,7 @@ const Services = () => {
             From blueprints to landmarks, we provide cost-effective engineering solutions for Indore's skyline.
           </p>
           <Link to="/contact">
-            <motion.button 
+            <motion.button
               whileHover={{ scale: 1.05, backgroundColor: "#0f172a", color: "#ffffff" }}
               whileTap={{ scale: 0.95 }}
               className="bg-[#f59e0b] text-[#0f172a] font-black px-16 py-6 rounded-sm shadow-2xl transition-all duration-300 uppercase tracking-[0.2em] text-lg"

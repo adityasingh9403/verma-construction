@@ -34,7 +34,7 @@ const Home = () => {
             {/* 2. Stats Section - Animated Industrial Grid */}
             <section className="py-20 bg-[#fcfcfc] border-b border-slate-100">
                 <div className="max-w-7xl mx-auto px-6">
-                    <motion.div 
+                    <motion.div
                         variants={containerVariants}
                         initial="hidden"
                         whileInView="visible"
@@ -83,8 +83,8 @@ const Home = () => {
                         </div>
 
                         <p className="text-slate-500 text-xl leading-relaxed font-medium border-l-8 border-[#f59e0b] pl-8">
-                            We don't just build structures; we create landmarks. With a focus on structural integrity 
-                            and architectural innovation, our team ensures every project becomes a testament to 
+                            We don't just build structures; we create landmarks. With a focus on structural integrity
+                            and architectural innovation, our team ensures every project becomes a testament to
                             modern engineering standards in Indore.
                         </p>
 
@@ -123,7 +123,7 @@ const Home = () => {
                             />
                         </div>
                         {/* Floating Credibility Box */}
-                        <motion.div 
+                        <motion.div
                             animate={{ y: [0, -20, 0] }}
                             transition={{ repeat: Infinity, duration: 4 }}
                             className="absolute -bottom-10 -left-10 bg-[#f59e0b] p-12 hidden xl:block shadow-2xl z-20"
@@ -138,7 +138,7 @@ const Home = () => {
             {/* 4. Featured Projects - Dark Industrial Parallax */}
             <section className="py-32 bg-[#0f172a] text-white relative">
                 <div className="absolute inset-0 opacity-5 pointer-events-none" style={{ backgroundImage: `radial-gradient(circle, white 1px, transparent 1px)`, backgroundSize: '40px 40px' }}></div>
-                
+
                 <div className="max-w-7xl mx-auto px-6 relative z-10">
                     <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
                         <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }}>
@@ -184,20 +184,21 @@ const Home = () => {
             {/* 5. CTA Section - Maximum Visibility */}
             <section className="py-40 bg-white relative overflow-hidden">
                 <div className="max-w-5xl mx-auto text-center px-6 relative z-10">
-                    <motion.div 
+                    <motion.div
                         initial={{ scale: 0 }}
                         whileInView={{ scale: 1 }}
                         className="inline-block p-6 bg-slate-50 rounded-full mb-10 shadow-inner"
                     >
                         <Building2 className="text-[#f59e0b]" size={60} />
                     </motion.div>
-                    
-                    <motion.h2 
+
+                    <motion.h2
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        className="text-6xl md:text-9xl font-black text-[#0f172a] mb-10 leading-[0.8] tracking-tighter uppercase"
+                        viewport={{ once: true }}
+                        className="text-4xl sm:text-6xl md:text-8xl lg:text-9xl font-black text-[#0f172a] mb-6 md:mb-10 leading-[1.1] md:leading-[0.8] tracking-tighter uppercase"
                     >
-                        Architecting <br />
+                        Architecting <br className="hidden sm:block" />
                         <span className="text-[#f59e0b]">Your Dreams.</span>
                     </motion.h2>
 
@@ -217,7 +218,7 @@ const Home = () => {
                 </div>
 
                 {/* Parallax Background Background Elements */}
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, x: -100 }}
                     whileInView={{ opacity: 0.03, x: 0 }}
                     transition={{ duration: 1.5 }}

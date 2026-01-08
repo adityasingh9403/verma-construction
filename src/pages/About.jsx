@@ -109,7 +109,7 @@ const About = () => {
             </div>
 
             <p className="text-slate-500 text-lg leading-relaxed font-medium">
-              A pioneer in <b>Turnkey Civil Engineering</b>, Mr. Verma has revolutionized the 
+              A pioneer in <b>Turnkey Civil Engineering</b>, Mr. Verma has revolutionized the  
               <b>Indore Real Estate</b> market by integrating modern technology with Vastu principles. 
               Under his guidance, we have delivered over 300+ landmarks across the state.
             </p>
