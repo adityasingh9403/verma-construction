@@ -31,10 +31,10 @@ const Navbar = () => {
               </div>
               <div className="flex flex-col">
                 <span className="text-xl md:text-2xl font-black text-[#0f172a] leading-none tracking-tight">
-                  VERMA <span className="text-[#f59e0b]">PRIME PROPERTIES</span>
+                  VERMA <span className="text-[#f59e0b]">PRIME CONSTRUCTION</span>
                 </span>
                 <span className="text-[10px] font-bold text-[#64748b] uppercase tracking-[0.15em]">
-                  Quality Construction & Interiors
+                  And PROPERTY BROKER
                 </span>
               </div>
             </Link>

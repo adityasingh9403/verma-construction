@@ -93,7 +93,7 @@ const Services = () => {
             transition={{ delay: 0.4 }}
             className="text-slate-400 max-w-2xl mx-auto text-xl font-medium leading-relaxed"
           >
-            Verma Prime Properties provides world-class structural engineering and architectural
+            Verma Prime Construction and Property Broker provides world-class structural engineering and architectural
             excellence tailored to Indore's growing landscape.
           </motion.p>
         </div>
