@@ -21,7 +21,7 @@ const Footer = () => {
             <p className="text-[10px] tracking-[0.3em] font-bold text-gray-500 uppercase">Building Excellence</p>
           </Link>
           <p className="text-sm leading-relaxed text-gray-400">
-            Verma Prime Construction and Property Broker is a premier name in high-quality civil work and infrastructure. 
+            Verma Prime Properties & Construction is a premier name in high-quality civil work and infrastructure. 
             From residential homes to massive commercial projects, we build with precision and integrity.
           </p>
           <div className="flex space-x-3">
@@ -83,8 +83,8 @@ const Footer = () => {
             <div className="flex items-start gap-4">
               <MapPin className="text-[#f59e0b] shrink-0" size={24} />
               <p className="text-sm font-medium leading-snug text-gray-300">
-                Verma House, Scheme No. 78, <br />
-                Indore, MP - 452010
+                Office No. 1, SR Empire, Silver <br />
+                Star City, Indore, MP - 452012
               </p>
             </div>
             <div className="flex items-center gap-4">
@@ -103,7 +103,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto mt-16 pt-8 border-t border-slate-800">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-sm font-bold text-gray-500">
-            © {currentYear} <span className="text-white">Verma Prime Construction and Property Broker</span>. Built for Strength.
+            © {currentYear} <span className="text-white">Verma Prime Properties & Construction</span>. Built for Strength.
           </p>
           <div className="flex gap-6 text-xs font-black uppercase tracking-widest text-gray-500">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>

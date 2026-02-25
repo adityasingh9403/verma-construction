@@ -35,7 +35,7 @@ const About = () => {
             className="h-1 bg-[#f59e0b] mx-auto mb-8"
           />
           <h1 className="text-5xl md:text-8xl font-black mb-8 uppercase tracking-tighter leading-none">
-            ENGINEERING <br /> <span className="text-[#f59e0b]">TRUST</span> SINCE 1995
+            BUILDING <br /> <span className="text-[#f59e0b]">TRUST</span> SINCE 2001
           </h1>
           <p className="text-gray-400 max-w-3xl mx-auto text-xl md:text-2xl leading-relaxed font-medium italic">
             "We don't just build structures; we architect the future of Central India."
@@ -113,17 +113,6 @@ const About = () => {
               <b>Indore Real Estate</b> market by integrating modern technology with Vastu principles. 
               Under his guidance, we have delivered over 300+ landmarks across the state.
             </p>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <motion.div whileHover={{ scale: 1.05 }} className="flex items-center gap-4 bg-slate-50 p-5 border-l-8 border-[#0f172a] shadow-sm">
-                <UserCheck className="text-[#f59e0b]" size={28} />
-                <span className="font-black text-[#0f172a] text-xs uppercase tracking-widest">ISO 9001:2015</span>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }} className="flex items-center gap-4 bg-slate-50 p-5 border-l-8 border-[#f59e0b] shadow-sm">
-                <Sparkles className="text-[#0f172a]" size={28} />
-                <span className="font-black text-[#0f172a] text-xs uppercase tracking-widest">Global Standards</span>
-              </motion.div>
-            </div>
           </motion.div>
         </div>
       </section>

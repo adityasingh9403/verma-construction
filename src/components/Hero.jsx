@@ -1,113 +1,108 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, ShieldCheck, Building2, Hammer, HardHat } from 'lucide-react';
+import { ArrowRight, ShieldCheck, Building2, Hammer, HardHat, Star } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <div className="relative min-h-[90vh] bg-slate-50 flex items-center justify-center overflow-hidden">
-      
-      {/* 1. Industrial Accent - Yellow Bar (Left Side) */}
+    <div className="relative min-h-screen bg-white flex flex-col items-center justify-center overflow-hidden">
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center py-16">
-        
-        {/* Left Side: Text Content (Occupies 7 columns) */}
-        <div className="lg:col-span-7 order-2 lg:order-1">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 py-5 w-full">
+        <div className="flex flex-col items-center text-center">
+
+          {/* --- TOP LOGO SECTION (Maximum Visibility & Responsive) --- */}
           <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            className="inline-flex items-center gap-2 bg-[#0f172a] text-[#f59e0b] px-4 py-2 rounded-sm mb-8"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="relative mb-6 md:mb-8 w-full flex justify-center px-2" // Padding kam kar di gayi hai
           >
-            <HardHat size={16} />
-            <span className="font-black tracking-[0.2em] text-[10px] md:text-xs uppercase">
-              Verma Prime Construction and Property Broker
-            </span>
+            {/* Logo Glow Effect - Isko thoda aur wide kiya hai */}
+            <div className="absolute inset-0 bg-[#f59e0b] blur-[60px] md:blur-[100px] opacity-25 rounded-full" />
+
+            <img
+              src="/verma_logo.png"
+              alt="Verma Prime Logo"
+              className="relative w-auto object-contain drop-shadow-[0_20px_50px_rgba(0,0,0,0.15)] hover:scale-105 transition-transform duration-500"
+              style={{
+                // Mobile: 160px (h-40) | Tablet: 240px (h-60) | Desktop: 320px+ (h-80)
+                height: "clamp(160px, 25vw, 350px)"
+              }}
+            />
           </motion.div>
 
-          <motion.h1 
+          {/* Main Title - Fully Responsive with Fluid Typography */}
+          <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            className="text-5xl md:text-7xl lg:text-8xl font-black text-[#0f172a] leading-[0.95] mb-8 tracking-tighter"
+            transition={{ delay: 0.4, duration: 0.8 }}
+            className="font-black text-[#0f172a] leading-[0.9] sm:leading-[0.85] mb-8 md:mb-10 tracking-tighter"
+            style={{
+              // Isse font-size mobile par chota aur desktop par bada automatically hoga
+              fontSize: "clamp(2.5rem, 12vw, 8rem)"
+            }}
           >
-            WE BUILD <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] to-[#d97706]">
-              STRENGTH.
+            <span className="block">ENGINEERING</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#f59e0b] via-[#d97706] to-[#0f172a] block">
+              LEGACIES.
             </span>
           </motion.h1>
 
-          <motion.p 
+          {/* Description */}
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="text-lg md:text-xl text-slate-600 mb-10 max-w-xl leading-relaxed font-medium border-l-4 border-slate-200 pl-6"
+            transition={{ delay: 0.6 }}
+            className="text-lg md:text-2xl text-slate-600 mb-12 max-w-3xl leading-relaxed font-medium"
           >
-            Experience the pinnacle of civil engineering. From luxury high-rises to robust industrial structures, 
-            <span className="text-[#0f172a] font-bold"> Verma Prime Construction and Property Broker </span> delivers excellence without compromise.
+            From conceptual blueprints to architectural masterpieces.
+            <span className="text-[#0f172a] font-bold"> Verma Prime Properties & Construction </span>
+            combines modern tech with 25 years of unshakeable trust.
           </motion.p>
 
-          <motion.div 
+          {/* Action Buttons & Stats Card */}
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.6 }}
-            className="flex flex-col sm:flex-row items-start sm:items-center gap-6"
+            transition={{ delay: 0.8 }}
+            className="flex flex-col items-center gap-10 w-full"
           >
-            <button className="w-full sm:w-auto bg-[#0f172a] text-white px-10 py-5 font-black flex items-center justify-center gap-3 hover:bg-[#f59e0b] hover:text-[#0f172a] transition-all duration-300 shadow-xl group">
-              OUR PORTFOLIO 
-              <ArrowRight className="group-hover:translate-x-2 transition-transform" />
-            </button>
-            
-            <div className="flex items-center gap-4">
-               <div className="h-12 w-[2px] bg-slate-300 hidden sm:block" />
-               <div className="flex -space-x-3">
-                  <div className="w-10 h-10 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center"><Building2 size={16}/></div>
-                  <div className="w-10 h-10 rounded-full bg-slate-300 border-2 border-white flex items-center justify-center"><Hammer size={16}/></div>
-               </div>
-               <p className="text-sm font-bold text-slate-700">500+ Projects Completed</p>
+            <div className="flex flex-col sm:flex-row gap-5 w-full justify-center max-w-2xl">
+              <button className="flex-1 bg-[#0f172a] text-white px-12 py-6 font-black text-xl flex items-center justify-center gap-4 hover:bg-[#f59e0b] hover:text-[#0f172a] transition-all duration-300 shadow-[0_20px_40px_rgba(15,23,42,0.3)] group rounded-xl">
+                VIEW PROJECTS
+                <ArrowRight className="group-hover:translate-x-2 transition-transform" size={24} />
+              </button>
+
+              <button className="flex-1 bg-white border-4 border-[#0f172a] text-[#0f172a] px-12 py-6 font-black text-xl flex items-center justify-center gap-4 hover:bg-slate-50 transition-all rounded-xl">
+                GET A QUOTE
+              </button>
+            </div>
+
+            {/* Floating Stats Board */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 bg-white p-8 rounded-2xl shadow-2xl border-b-8 border-[#f59e0b] w-full max-w-5xl">
+              <div className="text-center">
+                <p className="text-4xl font-black text-[#0f172a]">500+</p>
+                <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1">Projects</p>
+              </div>
+              <div className="text-center border-l border-slate-100">
+                <p className="text-4xl font-black text-[#f59e0b]">25+</p>
+                <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1">Years Exp.</p>
+              </div>
+              <div className="text-center border-l border-slate-100">
+                <p className="text-4xl font-black text-[#0f172a]">100%</p>
+                <p className="text-xs font-bold text-slate-500 uppercase tracking-widest mt-1">Safety</p>
+              </div>
+              <div className="text-center border-l border-slate-100">
+                <div className="flex justify-center text-[#f59e0b] mb-1">
+                  <Star size={16} fill="currentColor" />
+                  <Star size={16} fill="currentColor" />
+                  <Star size={16} fill="currentColor" />
+                  <Star size={16} fill="currentColor" />
+                  <Star size={16} fill="currentColor" />
+                </div>
+                <p className="text-xs font-bold text-slate-500 uppercase tracking-widest">Top Rated</p>
+              </div>
             </div>
           </motion.div>
-        </div>
-
-        {/* Right Side: Image Section (Occupies 5 columns) */}
-        <div className="lg:col-span-5 order-1 lg:order-2">
-          <div className="relative">
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8 }}
-              className="relative z-10"
-            >
-              {/* High Quality Hero Image */}
-              <img 
-                src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?q=80&w=800" 
-                alt="Modern Architecture Verma Prime Construction and Property Broker" 
-                className="w-full h-[450px] lg:h-[600px] object-cover rounded-sm shadow-2xl grayscale-[0.3] hover:grayscale-0 transition-all duration-1000"
-              />
-              
-              {/* Stats Overlay */}
-              <div className="absolute -top-6 -left-6 bg-[#f59e0b] text-[#0f172a] p-6 shadow-xl hidden xl:block">
-                <p className="text-4xl font-black">25+</p>
-                <p className="text-[10px] font-black uppercase tracking-widest">Years of Trust</p>
-              </div>
-
-              {/* Quality Badge Overlay */}
-              <motion.div 
-                animate={{ y: [0, -15, 0] }}
-                transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                className="absolute -bottom-10 -right-6 bg-white p-8 shadow-2xl hidden md:flex items-center gap-5 border-b-8 border-[#0f172a]"
-              >
-                <div className="bg-slate-100 p-3 rounded-full">
-                  <ShieldCheck className="text-[#f59e0b]" size={32} />
-                </div>
-                <div>
-                  <p className="font-black text-xl text-[#0f172a]">ISO 9001:2015</p>
-                  <p className="text-[10px] font-bold text-slate-400 uppercase">Quality Management Certified</p>
-                </div>
-              </motion.div>
-            </motion.div>
-
-            {/* Decorative Background Elements */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[80%] border-[20px] border-[#0f172a]/5 z-0 pointer-events-none" />
-          </div>
         </div>
       </div>
     </div>

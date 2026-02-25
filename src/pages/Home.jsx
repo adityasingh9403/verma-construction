@@ -76,7 +76,7 @@ const Home = () => {
                                 <span className="text-[#f59e0b] font-black uppercase tracking-[0.4em] text-xs">Our Legacy</span>
                             </div>
                             <h2 className="text-5xl md:text-7xl font-black text-[#0f172a] leading-[0.95] uppercase tracking-tighter">
-                                Verma Prime Construction and Property Broker: <br />
+                               Verma Prime Properties & Construction: <br />
                                 <span className="text-transparent" style={{ WebkitTextStroke: '2px #0f172a' }}>Pioneering</span> <br />
                                 Engineering Excellence.
                             </h2>
@@ -182,7 +182,7 @@ const Home = () => {
             </section>
 
             {/* 5. CTA Section - Maximum Visibility */}
-            <section className="py-40 bg-white relative overflow-hidden">
+            <section className="py-20 bg-white relative overflow-hidden">
                 <div className="max-w-5xl mx-auto text-center px-6 relative z-10">
                     <motion.div
                         initial={{ scale: 0 }}

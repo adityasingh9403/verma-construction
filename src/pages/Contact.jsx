@@ -144,7 +144,7 @@ const Contact = () => {
                                 href="tel:+919993816314" 
                                 className="flex items-center justify-between bg-[#0f172a] text-white px-10 py-6 font-black hover:bg-[#f59e0b] hover:text-[#0f172a] transition-all shadow-2xl"
                             >
-                                CALL TECHNICAL HEAD <Phone size={24} />
+                                CALL TECHNICAL CONSULTANT <Phone size={24} />
                             </motion.a>
                             <motion.a 
                                 whileHover={{ x: 15 }}
@@ -158,7 +158,7 @@ const Contact = () => {
                         <div className="p-8 bg-slate-50 border-l-[10px] border-[#0f172a] flex items-start gap-4 shadow-sm">
                             <CheckCircle className="text-[#f59e0b] shrink-0" size={24} />
                             <p className="text-[#0f172a] font-bold text-sm leading-relaxed uppercase tracking-tight">
-                                Verma Prime Construction and Property Broker ensures 100% data privacy. Your project details are secure with our structural vault.
+                                Verma Prime Properties & Construction ensures 100% data privacy. Your project details are secure with our structural vault.
                             </p>
                         </div>
                     </motion.div>

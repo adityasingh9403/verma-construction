@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Home, Building2, HardHat, PenTool, CheckCircle2, ChevronRight, Zap, ShieldCheck, Ruler } from 'lucide-react';
+import { Home, Building2, HardHat, PenTool, Handshake, CheckCircle2, ChevronRight, Zap, ShieldCheck, Ruler } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const services = [
@@ -32,6 +32,14 @@ const services = [
     features: ["Luxury Finishing", "Space Optimization", "3D Visualization"],
     color: "border-[#0f172a]"
   },
+  {
+    title: "Brokrage",
+    icon: <Handshake size={32} />,
+    desc: "Helping clients find the right property or the right buyer with trusted guidance, fair pricing, and smooth end-to-end coordination.",
+    features: ["Transparent Deal Management", "Verified Property Listings", "Legal & Documentation Support"],
+    color: "border-[#0f172a]"
+  },
+
 ];
 
 const processSteps = [
@@ -93,7 +101,7 @@ const Services = () => {
             transition={{ delay: 0.4 }}
             className="text-slate-400 max-w-2xl mx-auto text-xl font-medium leading-relaxed"
           >
-            Verma Prime Construction and Property Broker provides world-class structural engineering and architectural
+            Verma Prime Properties & Construction provides world-class structural engineering and architectural
             excellence tailored to Indore's growing landscape.
           </motion.p>
         </div>
@@ -106,7 +114,7 @@ const Services = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid md:grid-cols-2 lg:grid-cols-4 gap-0 border-4 border-[#0f172a]"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 border-4 border-[#0f172a]"
         >
           {services.map((s, index) => (
             <motion.div
