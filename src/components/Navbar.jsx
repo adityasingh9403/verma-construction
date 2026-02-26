@@ -23,9 +23,9 @@ const Navbar = () => {
 
   // "Home" removed from here as requested
   const navLinks = [
+    { name: 'About Us', path: '/about' },
     { name: 'Projects', path: '/projects' },
     { name: 'Services', path: '/services' },
-    { name: 'About Us', path: '/about' },
     { name: 'Process', path: '/process' },
     { name: 'Contact', path: '/contact' },
   ];
@@ -38,19 +38,29 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20 items-center">
 
-          {/* Logo Section - Image Version */}
+          {/* Logo Section - Image & Text Combined */}
           <div className="flex-shrink-0 z-[110]">
             <Link
               to="/"
-              className="flex items-center"
+              className="flex items-center gap-3 group"
               onClick={() => setIsOpen(false)}
             >
+              {/* Logo Image */}
               <img
                 src="/verma_logo.png"
                 alt="Verma Prime Logo"
-                className="h-12 w-auto md:h-16 transition-transform hover:scale-105 active:scale-95"
-              // h-12 mobile ke liye hai aur md:h-16 desktop ke liye
+                className="h-10 w-auto md:h-14 transition-transform group-hover:scale-105 active:scale-95"
               />
+
+              {/* Brand Text */}
+              <div className="flex flex-col justify-center border-l-2 border-gray-200 pl-3">
+                <h3 className="text-lg md:text-xl font-black text-[#0f172a] uppercase tracking-tighter leading-tight flex flex-col">
+                  VERMA
+                  <span className="text-[#f59e0b] text-[10px] md:text-xs tracking-[0.2em] -mt-1">
+                    PRIME PROPERTIES
+                  </span>
+                </h3>
+              </div>
             </Link>
           </div>
 

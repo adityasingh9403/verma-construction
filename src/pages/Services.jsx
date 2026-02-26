@@ -8,38 +8,63 @@ const services = [
     title: "Residential Development",
     icon: <Home size={32} />,
     desc: "Crafting bespoke luxury villas and high-end apartments engineered for the modern family.",
+    whoIsItFor: "Homeowners, Real Estate Investors, and Landowners.",
+    benefits: "Vastu-optimized layouts, 25% better space utilization, and earthquake-resistant structures.",
+    price: "Starting from ₹1,800/sq.ft",
     features: ["Vastu Compliant", "Sustainable Materials", "Structural Warranty"],
-    color: "border-[#f59e0b]"
+    faqs: [
+      { q: "Do you handle building permissions?", a: "Yes, we handle all municipal (T&CP) approvals." },
+      { q: "What is the warranty period?", a: "We provide a 10-year structural warranty." }
+    ]
   },
   {
     title: "Commercial Infrastructure",
     icon: <Building2 size={32} />,
-    desc: "Developing iconic office hubs and retail complexes that drive business growth and ROI.",
+    desc: "Developing iconic office hubs and retail complexes that drive business growth.",
+    whoIsItFor: "Business Owners, Retailers, and Corporate Groups.",
+    benefits: "Modern glass-facade designs, optimized footfall planning, and rapid ROI through efficient design.",
+    price: "Starting from ₹2,200/sq.ft",
     features: ["Steel-Frame Structures", "Modern Facades", "Optimized Layouts"],
-    color: "border-[#0f172a]"
+    faqs: [
+      { q: "Can you build multi-level parking?", a: "Yes, we specialize in basement and stack parking solutions." }
+    ]
   },
   {
     title: "Civil Engineering",
     icon: <HardHat size={32} />,
     desc: "Large-scale infrastructure including roads, industrial parks, and complex structural planning.",
+    whoIsItFor: "Government Contractors, Industrialists, and Developers.",
+    benefits: "High-precision structural integrity and strict adherence to government safety standards.",
+    price: "Based on Project Scope (BOQ)",
     features: ["Heavy Equipment Fleet", "Precision Engineering", "Government Grade"],
-    color: "border-[#f59e0b]"
+    faqs: [
+      { q: "Do you do soil testing?", a: "Yes, we perform complete geotechnical analysis before design." }
+    ]
   },
   {
     title: "Premium Interior Design",
     icon: <PenTool size={32} />,
     desc: "Merging aesthetics with functionality to create world-class interiors and smart spaces.",
+    whoIsItFor: "Luxury Homeowners and Premium Offices.",
+    benefits: "Bespoke furniture, smart home integration, and 3D walkthroughs before execution.",
+    price: "Starting from ₹5,00,000",
     features: ["Luxury Finishing", "Space Optimization", "3D Visualization"],
-    color: "border-[#0f172a]"
+    faqs: [
+      { q: "How long does a project take?", a: "Residential interiors take approx. 45-60 days." }
+    ]
   },
   {
-    title: "Brokrage",
+    title: "Property Brokerage",
     icon: <Handshake size={32} />,
-    desc: "Helping clients find the right property or the right buyer with trusted guidance, fair pricing, and smooth end-to-end coordination.",
-    features: ["Transparent Deal Management", "Verified Property Listings", "Legal & Documentation Support"],
-    color: "border-[#0f172a]"
-  },
-
+    desc: "Trusted guidance for buying or selling premium assets with fair pricing and end-to-end coordination.",
+    whoIsItFor: "Buyers, Sellers, and Real Estate Investors.",
+    benefits: "Zero documentation hassle, verified property listings, and secure transaction management.",
+    price: "1% to 2% Brokerage Fee",
+    features: ["Transparent Deals", "Verified Listings", "Legal Support"],
+    faqs: [
+      { q: "Do you help with home loans?", a: "Yes, we have tie-ups with major banks for instant processing." }
+    ]
+  }
 ];
 
 const processSteps = [
@@ -65,7 +90,7 @@ const Services = () => {
   };
 
   return (
-    <div className="pt-24 bg-[#fcfcfc] overflow-hidden">
+    <div className="bg-[#fcfcfc] overflow-hidden">
 
       {/* 1. Header Section - Dynamic Entrance */}
       <section className="bg-[#0f172a] py-32 text-white relative">
@@ -108,7 +133,7 @@ const Services = () => {
       </section>
 
       {/* 2. Services Grid - 3D Hover & Staggered Reveal */}
-      <section className="py-32 max-w-7xl mx-auto px-6">
+      <section className="py-20 max-w-7xl mx-auto px-6">
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -119,46 +144,66 @@ const Services = () => {
           {services.map((s, index) => (
             <motion.div
               key={index}
-              variants={itemVariants}
-              whileHover={{ backgroundColor: "#0f172a", color: "#ffffff" }}
-              className={`p-10 bg-white border-r last:border-0 border-slate-100 transition-all duration-500 group relative flex flex-col justify-between overflow-hidden`}
+              className="p-8 bg-white border border-slate-100 transition-all duration-500 group relative flex flex-col justify-between overflow-hidden hover:shadow-2xl"
             >
-              {/* Decorative Number */}
-              <div className="absolute -top-4 -right-4 text-8xl font-black text-slate-50 group-hover:text-white/5 pointer-events-none transition-colors">
+              {/* Background Decorative Text */}
+              <div className="absolute -top-4 -right-4 text-6xl font-black text-slate-100 group-hover:text-white/10 pointer-events-none transition-colors">
                 {index + 1}
               </div>
 
               <div>
-                <div className="bg-[#0f172a] w-16 h-16 flex items-center justify-center text-[#f59e0b] mb-10 group-hover:bg-[#f59e0b] group-hover:text-[#0f172a] group-hover:rotate-[360deg] transition-all duration-700">
+                {/* Icon & Title */}
+                <div className="bg-[#0f172a] w-14 h-14 flex items-center justify-center text-[#f59e0b] mb-6 group-hover:scale-110 transition-transform duration-500">
                   {s.icon}
                 </div>
-                <h3 className="text-2xl font-black mb-5 uppercase tracking-tighter leading-none">{s.title}</h3>
-                <p className="text-slate-500 group-hover:text-slate-300 mb-8 text-sm font-semibold leading-relaxed transition-colors">
-                  {s.desc}
-                </p>
+                <h3 className="text-xl font-black mb-2 uppercase tracking-tight text-[#0f172a]">{s.title}</h3>
 
-                <ul className="space-y-4 mb-10">
+                {/* Price Badge */}
+                <span className="inline-block bg-[#f59e0b]/10 text-[#f59e0b] text-[10px] font-black px-2 py-1 mb-4 rounded uppercase">
+                  {s.price}
+                </span>
+
+                {/* Target Audience */}
+                <p className="text-[11px] font-bold text-slate-400 uppercase mb-4">Target: {s.whoIsItFor}</p>
+
+                {/* Benefits Section (The "Why") */}
+                <div className="mb-6">
+                  <p className="text-xs font-bold text-[#0f172a] mb-1">KEY BENEFIT:</p>
+                  <p className="text-slate-500 text-xs italic">"{s.benefits}"</p>
+                </div>
+
+                {/* Features List */}
+                <ul className="space-y-2 mb-8 border-t border-slate-50 pt-6">
                   {s.features.map((feature, i) => (
-                    <li key={i} className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-slate-400 group-hover:text-white transition-colors">
-                      <ShieldCheck size={14} className="text-[#f59e0b]" /> {feature}
+                    <li key={i} className="flex items-center gap-2 text-[10px] font-black uppercase tracking-wider text-slate-600">
+                      <CheckCircle2 size={12} className="text-[#f59e0b]" /> {feature}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              <motion.button
-                whileTap={{ scale: 0.9 }}
-                className="flex items-center gap-2 font-black text-[10px] uppercase tracking-[0.2em] text-[#f59e0b] group-hover:text-white transition-all"
-              >
-                Learn Detail <ChevronRight size={16} />
-              </motion.button>
+              {/* FAQ Snapshot (Quick Info) */}
+              <div className="mt-auto">
+                <p className="text-[10px] font-black text-[#0f172a] mb-2 uppercase border-b pb-1">Sample FAQ:</p>
+                <p className="text-[10px] text-slate-400 italic mb-6">Q: {s.faqs[0].q}</p>
+
+                {/* CTA Link */}
+                <Link to="/contact">
+                  <motion.button
+                    whileTap={{ scale: 0.95 }}
+                    className="w-full bg-[#0f172a] text-white py-4 font-black text-[10px] uppercase tracking-[0.2em] group-hover:bg-[#f59e0b] group-hover:text-[#0f172a] transition-all"
+                  >
+                    Enquire Now
+                  </motion.button>
+                </Link>
+              </div>
             </motion.div>
           ))}
         </motion.div>
       </section>
 
       {/* 3. The Execution Process - Parallax Motion */}
-      <section className="py-32 bg-[#0f172a] relative overflow-hidden">
+      <section className="py-20 bg-[#0f172a] relative overflow-hidden">
         {/* Animated Background Element */}
         <motion.div
           animate={{ x: [-100, 100], opacity: [0.03, 0.05] }}
@@ -203,7 +248,7 @@ const Services = () => {
       </section>
 
       {/* 4. Strategic Call to Action */}
-      <section className="py-40 text-center bg-white relative">
+      <section className="py-10 text-center bg-white relative">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

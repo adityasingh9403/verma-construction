@@ -18,7 +18,7 @@ const About = () => {
   };
 
   return (
-    <div className="pt-20 bg-white overflow-hidden">
+    <div className="bg-white overflow-hidden">
       
       {/* 1. Dynamic SEO Header Section */}
       <section className="bg-[#0f172a] py-32 md:py-48 text-white relative">
